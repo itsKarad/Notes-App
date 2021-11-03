@@ -3,34 +3,7 @@ import { useParams } from 'react-router';
 import './Page.css';
 import Editor from '../Editor/Editor';
 import PageHeader from './PageHeader';
-
-const DUMMY_PAGES = [
-    {
-      id: "home",
-      title: "Home",
-      content : "Just some text for home."
-    },
-    {
-      id: "docs",
-      title: "Documentation",
-      content : "Just some text for docs."
-    },
-    {
-      id: "notes",
-      title: "Meeting Notes",
-      content : "Just some text for meeting notes."
-    },
-    {
-      id: "projects",
-      title: "Projects",
-      content : "Just some text for projects."
-    },
-    {
-      id: "public",
-      title: "Public",
-      content : "Just some text for public."
-    },
-];
+import DUMMY_PAGES from '../../seed';
 
 const Page = (props) => {
     const pageId = useParams().pageId;
