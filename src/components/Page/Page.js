@@ -61,8 +61,8 @@ const Page = (props) => {
                     value = {input}
                 ></Editor>  
             </div>
-            {pageTitle}
-            {input}
+            {/* {pageTitle}
+            {input} */}
         </div>
     );
 }

@@ -1,6 +1,6 @@
 
-import React, {useState, useEffect} from 'react';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import React from 'react';
+import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
 
 import SideBar from './components/SideBar/SideBar';
 import Page from './components/Page/Page';
@@ -31,14 +31,11 @@ const DUMMY_PAGES = [
     id: "public",
     title: "Public",
     content : "Just some text for public."
-  },
+  }
 ];
 
 const Pages = ({match}) => {
-  const {
-    params: {pageId},
-  } = match;
-
+  
   return (      
     <div className="app-container container">
       <div className = "row">
@@ -59,6 +56,7 @@ function App() {
       <Switch>      
         <Route path="/:pageId" component = {Pages} exact>
         </Route>
+        <Redirect to="/home"></Redirect>
       </Switch>
     </Router> 
   );

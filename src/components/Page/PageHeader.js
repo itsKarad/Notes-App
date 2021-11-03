@@ -7,6 +7,7 @@ const PageHeader = (props) => {
                 className = "page-header-text" 
                 contentEditable = "true" 
                 onInput = {props.onChange}
+                suppressContentEditableWarning={true}
             >
                 {props.value}
             </h1>

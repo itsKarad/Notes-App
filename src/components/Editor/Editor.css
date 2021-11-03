@@ -9,6 +9,8 @@
     width: 100%;
     /* letter-spacing: -0.05rem; */
     font-family: 'Noto Sans', sans-serif;
+    line-height: 2rem;
+    background-color: inherit;
 }
 
 .editor::-webkit-scrollbar {

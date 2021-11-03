@@ -4,4 +4,5 @@ body, html {
   padding: 0px; 
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
   font-weight: 400 !important;
+  background-color: rgb(249, 250, 254) !important;
 }
