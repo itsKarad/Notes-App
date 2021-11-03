@@ -1,0 +1,14 @@
+.sidebar-pages{    
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    flex: start;
+    height: 100%;
+    background-color: #F7F6F3;
+    padding: 5%;
+}
