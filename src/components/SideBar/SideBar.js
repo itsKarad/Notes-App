@@ -3,8 +3,10 @@ import SideBarItem from './SideBarItem';
 import './SideBar.css';
 import SideBarHeader from './SideBarHeader';
 import SideBarFooter from './SideBarFooter';
+import NewPage from './NewPage';
 
 const SideBar = (props) => {
+    console.log(props);
     return (          
         <div className = "sidebar-container">
             <div className="sidebar">     
@@ -19,6 +21,9 @@ const SideBar = (props) => {
                             )
                         })
                     }
+                    <div className = "sidebar-item-container" key = "lomao">
+                        <NewPage></NewPage>
+                    </div>
                 </div>                             
             </div>      
             <div className = "sidebar-footer">

@@ -1,21 +1,25 @@
 import React,{useState, useEffect} from 'react';
+import ReactMarkdown from 'react-markdown'
 import { useParams } from 'react-router';
 import './Page.css';
 import Editor from '../Editor/Editor';
 import PageHeader from './PageHeader';
-import DUMMY_PAGES from '../../seed';
+import Preview from '../Preview/Preview';
 
 const Page = (props) => {
+    console.log(props);
     const pageId = useParams().pageId;
-    const [pageTitle, setPageTitle] = useState("");
-    const [input, setInput] = useState("");
-
+    console.log(pageId);
+    const selectedPage = props.pages.find(page => page.id === pageId); 
+    console.log(selectedPage);
+    const [pageTitle, setPageTitle] = useState(selectedPage.title);
+    const [input, setInput] = useState(selectedPage.content);   
+    console.log(input);
+    console.log(pageTitle);
     useEffect(() => {
-        const selectedPage = DUMMY_PAGES.find(page => page.id === pageId);        
         setPageTitle(selectedPage.title);
         setInput(selectedPage.content);
-    }, [pageId]);
-    
+    }, [selectedPage]);
     const inputChangeHandler = (e) => {
         setInput(e.target.value);
     }
@@ -33,6 +37,7 @@ const Page = (props) => {
                     onChange = {inputChangeHandler} 
                     value = {input}
                 ></Editor>  
+                {/* <Preview markdown = {input}></Preview> */}
             </div>
             {/* {pageTitle}
             {input} */}
