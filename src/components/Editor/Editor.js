@@ -1,4 +1,6 @@
 import React from 'react';
+import { createEditor } from 'slate'
+import { Slate, Editable, withReact } from 'slate-react';
 import './Editor.css';
 const Editor = (props) => {
     return (

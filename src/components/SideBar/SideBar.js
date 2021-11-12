@@ -22,7 +22,7 @@ const SideBar = (props) => {
                         })
                     }
                     <div className = "sidebar-item-container" key = "lomao">
-                        <NewPage></NewPage>
+                        <NewPage onCreateNewPage = {props.onCreateNewPage}></NewPage>
                     </div>
                 </div>                             
             </div>      

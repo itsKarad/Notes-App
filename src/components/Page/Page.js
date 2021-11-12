@@ -37,7 +37,7 @@ const Page = (props) => {
                     onChange = {inputChangeHandler} 
                     value = {input}
                 ></Editor>  
-                {/* <Preview markdown = {input}></Preview> */}
+                <Preview markdown = {input}></Preview>
             </div>
             {/* {pageTitle}
             {input} */}
