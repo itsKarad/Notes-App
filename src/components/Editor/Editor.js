@@ -15,6 +15,12 @@ import {
   toggleUnderlineMark,
 } from './util';
 import Toolbar from './Toolbar';
+import BulletBlock from './Blocks/BulletBlock';
+import NumberedBlock from './Blocks/NumberedBlock';
+import H1Block from './Blocks/H1Block';
+import H2Block from './Blocks/H2Block';
+import H3Block from './Blocks/H3Block';
+import QuoteBlock from './Blocks/QuoteBlock';
 
 
 
@@ -44,8 +50,23 @@ const EditorBlock = (props) => {
 
     }
     const renderElement = useCallback((props) => {
-      if(props.element.type === "code"){
-        return <CodeBlock {...props}></CodeBlock>
+      if(props.element.type === "bullet"){
+        return <BulletBlock {...props}></BulletBlock>
+      }
+      else if(props.element.type === "numbered"){
+        return <NumberedBlock {...props}></NumberedBlock>
+      }
+      else if(props.element.type === "h1"){
+        return <H1Block {...props}></H1Block>
+      }
+      else if(props.element.type === "h2"){
+        return <H2Block {...props}></H2Block>
+      }
+      else if(props.element.type === "h3"){
+        return <H3Block {...props}></H3Block>
+      }
+      else if(props.element.type === "quote"){
+        return <QuoteBlock {...props}></QuoteBlock>
       }
       else {
         return <TextBlock {...props}></TextBlock>
@@ -75,7 +96,7 @@ const EditorBlock = (props) => {
             >
                 <Toolbar editor = {editor}/>
                 <Editable 
-                    placeholder="Enter some rich text…"
+                    placeholder="Just start typing..."
                     onKeyDown = {keyDownHandler}
                     renderElement = {renderElement}
                     renderLeaf = {renderLeaf}

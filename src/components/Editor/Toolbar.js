@@ -5,12 +5,15 @@ import {
     toggleItalicMark, 
     toggleStrikethroughMark, 
     toggleUnderlineMark,
+    toggleBulletBlock,
+    toggleNumberedBlock,
+    toggleH1Block,
+    toggleH2Block,
+    toggleH3Block,
+    toggleQuoteBlock
   } from './util';
 
 const Toolbar = (props) => {
-    const handleMouseDown = (id) => {
-
-    }
     return (
         <div>
             <button onMouseDown = {event => {
@@ -33,6 +36,30 @@ const Toolbar = (props) => {
                 event.preventDefault();
                 toggleCodeMark(props.editor);
             }}>Code</button>
+            <button onMouseDown = {event => {
+                event.preventDefault();
+                toggleBulletBlock(props.editor);
+            }}>Bullet</button>
+            <button onMouseDown = {event => {
+                event.preventDefault();
+                toggleNumberedBlock(props.editor);
+            }}>1.</button>
+            <button onMouseDown = {event => {
+                event.preventDefault();
+                toggleH1Block(props.editor);
+            }}>H1</button>
+            <button onMouseDown = {event => {
+                event.preventDefault();
+                toggleH2Block(props.editor);
+            }}>H2</button>
+            <button onMouseDown = {event => {
+                event.preventDefault();
+                toggleH3Block(props.editor);
+            }}>H3</button>
+            <button onMouseDown = {event => {
+                event.preventDefault();
+                toggleQuoteBlock(props.editor);
+            }}>Q</button>
         </div>
     );
 

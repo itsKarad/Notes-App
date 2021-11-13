@@ -4,8 +4,6 @@ import { useParams } from 'react-router';
 import './Page.css';
 import EditorBlock from '../Editor/Editor';
 import PageHeader from './PageHeader';
-import Preview from '../Preview/Preview';
-
 const Page = (props) => {
     const pageId = useParams().pageId;
     console.log(pageId);
