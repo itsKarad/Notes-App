@@ -2,7 +2,7 @@ import React,{useState, useEffect} from 'react';
 import ReactMarkdown from 'react-markdown'
 import { useParams } from 'react-router';
 import './Page.css';
-import Editor from '../Editor/Editor';
+import EditorBlock from '../Editor/Editor';
 import PageHeader from './PageHeader';
 import Preview from '../Preview/Preview';
 
@@ -33,14 +33,11 @@ const Page = (props) => {
                 onChange = {pageTitleChangeHandler}
             ></PageHeader>
             <div className = "page-content">
-                <Editor 
+                <EditorBlock 
                     onChange = {inputChangeHandler} 
                     value = {input}
-                ></Editor>  
-                <Preview markdown = {input}></Preview>
+                ></EditorBlock>  
             </div>
-            {/* {pageTitle}
-            {input} */}
         </div>
     );
 }
