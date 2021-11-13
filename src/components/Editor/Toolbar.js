@@ -1,7 +1,7 @@
 import React from 'react';
 import {
     toggleBoldMark, 
-    toggleCodeBlock, 
+    toggleCodeMark, 
     toggleItalicMark, 
     toggleStrikethroughMark, 
     toggleUnderlineMark,
@@ -29,6 +29,10 @@ const Toolbar = (props) => {
                 event.preventDefault();
                 toggleStrikethroughMark(props.editor);
             }}>S</button>
+            <button onMouseDown = {event => {
+                event.preventDefault();
+                toggleCodeMark(props.editor);
+            }}>Code</button>
         </div>
     );
 

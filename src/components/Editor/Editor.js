@@ -9,7 +9,7 @@ import TextBlock from './Blocks/TextBlock';
 import Leaf from './Blocks/Leaf';
 import {
   toggleBoldMark, 
-  toggleCodeBlock, 
+  toggleCodeMark, 
   toggleItalicMark, 
   toggleStrikethroughMark, 
   toggleUnderlineMark,
@@ -19,14 +19,15 @@ import Toolbar from './Toolbar';
 
 
 const EditorBlock = (props) => {
-    const [value, setValue] = useState(initialValue);
+    const [value, setValue] = useState(JSON.parse(localStorage.getItem("content")) || initialValue);
     const editor = useMemo(() => withHistory(withReact(createEditor())), []);
     
     const keyDownHandler = (e) => {
-      e.preventDefault();   
+       
       if(e.ctrlKey){
+        e.preventDefault();  
         if(e.key === "e"){
-          toggleCodeBlock(editor);          
+          toggleCodeMark(editor);          
         }
         else if(e.key === "b"){          
           toggleBoldMark(editor);
@@ -60,7 +61,18 @@ const EditorBlock = (props) => {
             <Slate 
               editor={editor} 
               value={value} 
-              onChange={value => {console.log(value);setValue(value)}}
+              onChange={val => {                
+                setValue(val);
+                const isAstChange = editor.operations.some(
+                  op => "set_selection" !== op.type
+                );
+                console.log(isAstChange);
+                console.log(val);
+                if(isAstChange){
+                  // Save to local storage
+                  localStorage.setItem("content", JSON.stringify(val));
+                }
+              }}
             >
                 <Toolbar editor = {editor}/>
                 <Editable 
@@ -79,7 +91,7 @@ const initialValue = [
   {
     type: "paragraph",
     children: [{
-      text: "A line of text in a paragraph!"
+      text: "A line of text in a paragraph!!!"
     }]
   },
 ]

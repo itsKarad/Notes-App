@@ -33,9 +33,10 @@ const isStrikethroughMarkActive = (editor) => {
 };
   
   
-const isCodeBlockActive = (editor) => {
+const isCodeMarkActive = (editor) => {
     const [match] = Editor.nodes(editor, {
-      match: n => n.type === "code"
+      match: n => n.code === true,
+      universal: true,
     });
     return !!match;
 };
@@ -84,26 +85,21 @@ const toggleStrikethroughMark = (editor) => {
     );
 }
   
-const toggleCodeBlock = (editor) => {
+const toggleCodeMark = (editor) => {
     console.log("Toggling code");
-    const isActive = isCodeBlockActive(editor);
+    const isActive = isCodeMarkActive(editor);
     Transforms.setNodes(
       editor,
-      { type: isActive ? "paragraph" : "code"},
-      { match: n => Editor.isBlock(editor, n)}
+      { code: !isActive},
+      { match: n => Text.isText(n), split: true}
     );  
 };
 
 export 
 {
     toggleBoldMark, 
-    toggleCodeBlock, 
+    toggleCodeMark, 
     toggleItalicMark, 
     toggleStrikethroughMark, 
     toggleUnderlineMark,
-    isBoldMarkActive,
-    isCodeBlockActive,
-    isItalicMarkActive,
-    isStrikethroughMarkActive,
-    isUnderlineMarkActive,
 };

@@ -9,7 +9,18 @@ const Leaf = (props) => {
     if(props.leaf.strikethrough){
         textDecorationValue = "line-through"
     }
-    console.log(textDecorationValue);
+    if(props.leaf.code){
+        return (
+            <code {...props.attributes} style = {{
+                fontWeight: props.leaf.bold ? "bold" : "normal",
+                fontStyle: props.leaf.italic ? "italic" : "normal",
+                textDecoration: textDecorationValue,
+            }}>
+                {props.children}
+
+            </code>
+        )
+    }
     return (
         <span {...props.attributes} style = {{
             fontWeight: props.leaf.bold ? "bold" : "normal",
