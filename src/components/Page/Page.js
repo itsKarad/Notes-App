@@ -7,15 +7,11 @@ import PageHeader from './PageHeader';
 import Preview from '../Preview/Preview';
 
 const Page = (props) => {
-    console.log(props);
     const pageId = useParams().pageId;
     console.log(pageId);
     const selectedPage = props.pages.find(page => page.id === pageId); 
-    console.log(selectedPage);
     const [pageTitle, setPageTitle] = useState(selectedPage.title);
-    const [input, setInput] = useState(selectedPage.content);   
-    console.log(input);
-    console.log(pageTitle);
+    const [input, setInput] = useState(selectedPage.content); 
     useEffect(() => {
         setPageTitle(selectedPage.title);
         setInput(selectedPage.content);
@@ -36,6 +32,7 @@ const Page = (props) => {
                 <EditorBlock 
                     onChange = {inputChangeHandler} 
                     value = {input}
+                    pageId = {pageId}
                 ></EditorBlock>  
             </div>
         </div>

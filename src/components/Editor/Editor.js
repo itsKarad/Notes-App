@@ -1,4 +1,4 @@
-import React, {useState, useMemo, useCallback } from 'react';
+import React, {useState, useMemo, useCallback, useEffect } from 'react';
 import { createEditor, Descendant, Transforms, Editor, Element as SlateElement, Text} from 'slate'
 import { Slate, Editable, withReact, useSlate } from 'slate-react'
 import isHotkey from 'is-hotkey'
@@ -18,12 +18,11 @@ import Toolbar from './Toolbar';
 
 
 
-const EditorBlock = (props) => {
+const EditorBlock = (props) => {  
     const [value, setValue] = useState(JSON.parse(localStorage.getItem("content")) || initialValue);
     const editor = useMemo(() => withHistory(withReact(createEditor())), []);
     
-    const keyDownHandler = (e) => {
-       
+    const keyDownHandler = (e) => {       
       if(e.ctrlKey){
         e.preventDefault();  
         if(e.key === "e"){

@@ -6,6 +6,10 @@ import './App.css';
 import DUMMY_PAGES from './seed';
 import useHttp from './hooks/use-http';
 
+// import { io } from "socket.io-client";
+
+// const socket = io("http://localhost:5000");
+
 const Pages = ({match}) => {
   const [pages, setPages] = useState([]);
   const {isLoading, error, sendRequest, resetError} = useHttp();
