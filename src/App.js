@@ -3,7 +3,6 @@ import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom
 import SideBar from './components/SideBar/SideBar';
 import Page from './components/Page/Page';
 import './App.css';
-import DUMMY_PAGES from './seed';
 import useHttp from './hooks/use-http';
 
 // import { io } from "socket.io-client";
@@ -12,7 +11,7 @@ import useHttp from './hooks/use-http';
 
 const Pages = ({match}) => {
   const [pages, setPages] = useState([]);
-  const {isLoading, error, sendRequest, resetError} = useHttp();
+  const {isLoading, sendRequest} = useHttp();
   const onCreateNewPage = async (pageTitle) => {
     console.log("Making new page with title "+pageTitle);
     const newPage = {
@@ -50,7 +49,7 @@ const Pages = ({match}) => {
       setPages(loadedPages);
     }   
     fetchPages();
-  }, []);
+  }, [sendRequest]);
   
   if(isLoading){
     return (      

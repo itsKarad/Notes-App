@@ -6,7 +6,7 @@ const SideBarFooter = () => {
         <div className = "user-container">
             <div className = "user-info">
                 <div className = "user-photo-container">
-                    <img className = "user-photo" src = "https://pbs.twimg.com/profile_images/1439633446192697346/QJSHe2iC_400x400.jpg"></img>
+                    <img alt = "profile" className = "user-photo" src = "https://pbs.twimg.com/profile_images/1439633446192697346/QJSHe2iC_400x400.jpg"></img>
                 </div>
                 <div className = "user-details">
                     <div className = "user-address">

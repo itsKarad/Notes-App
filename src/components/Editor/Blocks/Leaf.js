@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Leaf = (props) => {
-    console.log(props.leaf);
     var textDecorationValue = "none";
     if(props.leaf.underline){
         textDecorationValue = "underline";

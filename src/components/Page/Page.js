@@ -1,5 +1,4 @@
 import React,{useState, useEffect} from 'react';
-import ReactMarkdown from 'react-markdown'
 import { useParams } from 'react-router';
 import './Page.css';
 import EditorBlock from '../Editor/Editor';
@@ -31,6 +30,7 @@ const Page = (props) => {
                     onChange = {inputChangeHandler} 
                     value = {input}
                     pageId = {pageId}
+                    key = {pageId}
                 ></EditorBlock>  
             </div>
         </div>
