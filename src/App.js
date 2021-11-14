@@ -4,7 +4,8 @@ import SideBar from './components/SideBar/SideBar';
 import Page from './components/Page/Page';
 import './App.css';
 import useHttp from './hooks/use-http';
-
+import { Container } from "@chakra-ui/react"
+import { Flex, Spacer } from "@chakra-ui/react"
 // import { io } from "socket.io-client";
 
 // const socket = io("http://localhost:5000");
@@ -70,17 +71,17 @@ const Pages = ({match}) => {
     ); 
   }
   else{
-    return (      
-      <div className="app-container container">
-        <div className = "row">
-          <div className = "col-4">
-            <SideBar onCreateNewPage = {onCreateNewPage} pages = {pages}></SideBar> 
-          </div>
-          <div className = "col-8">
-            <Page pages = {pages}></Page>
-          </div>
-        </div>     
-      </div>      
+    return ( 
+        <div className="app-container">
+          <div className = "row">
+            <div className = "col-4">
+              <SideBar onCreateNewPage = {onCreateNewPage} pages = {pages} key = {pages}></SideBar> 
+            </div>
+            <div className = "col-8">
+              <Page pages = {pages}></Page>
+            </div>
+          </div>     
+        </div>          
     );
   }
       

@@ -69,7 +69,7 @@ const toggleUnderlineMark = (editor) => {
     console.log(isActive);
     Transforms.setNodes(
       editor,
-      {underline: !isActive},
+      {underline: !isActive, strikethrough: false},
       { match: n => Text.isText(n), split: true }
     );
 }
@@ -80,7 +80,7 @@ const toggleStrikethroughMark = (editor) => {
     console.log(isActive);
     Transforms.setNodes(
       editor,
-      {strikethrough: !isActive},
+      {strikethrough: !isActive, underline: false},
       { match: n => Text.isText(n), split: true }
     );
 }

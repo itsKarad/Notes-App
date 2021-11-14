@@ -9,8 +9,10 @@ const SideBar = (props) => {
     console.log(props);
     return (          
         <div className = "sidebar-container">
-            <div className="sidebar">     
+            <div className = "sidebar-header-container">
                 <SideBarHeader></SideBarHeader>
+            </div>
+            <div className="sidebar">     
                 <div className = "sidebar-pages">
                     {
                         props.pages.map((page) => {
@@ -21,7 +23,7 @@ const SideBar = (props) => {
                             )
                         })
                     }
-                    <div className = "sidebar-item-container" key = "lomao">
+                    <div className = "sidebar-item-container" key = "new-page-form">
                         <NewPage onCreateNewPage = {props.onCreateNewPage}></NewPage>
                     </div>
                 </div>                             

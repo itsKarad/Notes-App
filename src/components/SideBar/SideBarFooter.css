@@ -1,9 +1,8 @@
 .user-container{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center; 
-    height: 7rem;
+    height: 13vh;;
 }
 .user-info{
     display: flex;
@@ -11,16 +10,16 @@
     width: 100%;
     height: 100%;
     align-items: center;
+    justify-content: center;
     padding: 10%;
-    padding-left: 20%;
+    padding-left: 2%;
 }
-.user-photo-container{
-    margin-right: 5%;
-}
+
 .user-photo{
     height: 3rem;
     width: 3rem;
     border-radius: 50%;
+    
     
 }
 .user-details{
@@ -29,6 +28,7 @@
     justify-content: space-around;
     padding-top: 4%;
     padding-bottom: 5%;
+    margin-left: 1rem;
 }
 .user-name{
     font-size: 1.35rem;

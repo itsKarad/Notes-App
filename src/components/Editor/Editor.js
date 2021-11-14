@@ -93,6 +93,7 @@ const EditorBlock = (props) => {
   return (
       <div className = "editor-container" key = {props.pageId}>
           <Slate 
+            className = "editor"
             key = {pageId}
             editor={editor} 
             value={value} 
@@ -100,7 +101,7 @@ const EditorBlock = (props) => {
           >
               <Toolbar editor = {editor}/>
               <Editable 
-                
+                  className = "editor"
                   placeholder="Just start typing..."
                   onKeyDown = {keyDownHandler}
                   renderElement = {renderElement}

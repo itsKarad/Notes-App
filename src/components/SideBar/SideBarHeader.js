@@ -1,9 +1,11 @@
 import React from 'react';
+import { Icon, Heading } from "@chakra-ui/react"
+import {CgNotes} from 'react-icons/cg';
 import './SideBarHeader.css';
 const SideBarHeader = () => {
     return (
         <div className = "sidebar-header">
-            <h1>❆</h1>
+            <Icon as = {CgNotes} h={50} w={50}></Icon>
         </div>
     );
 }
