@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon, Heading } from "@chakra-ui/react"
+import { Icon } from "@chakra-ui/react"
 import {CgNotes} from 'react-icons/cg';
 import './SideBarHeader.css';
 const SideBarHeader = () => {

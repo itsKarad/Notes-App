@@ -1,25 +1,46 @@
 import React from 'react';
 import './SideBarFooter.css';
-import { Avatar, AvatarBadge, AvatarGroup } from "@chakra-ui/react"
+import { Avatar } from "@chakra-ui/react"
+import {
+    Menu,
+    MenuButton,
+    MenuList,
+    MenuItem,
+    MenuGroup,
+} from "@chakra-ui/react";
+
 const SideBarFooter = () => {
     return (
-        <div className = "user-container">
-            <div className = "user-info">
-                <div className = "user-photo-container">
-                    <Avatar size="md" name = "karad" src = "https://pbs.twimg.com/profile_images/1439633446192697346/QJSHe2iC_400x400.jpg">
-                    </Avatar>
-                </div>
-                <div className = "user-details">
-                    <div className = "user-address">
-                        xx0295
+        <div className = "user-container">                           
+            <Menu>
+                <MenuButton>
+                    <div className = "user-info"> 
+                        <div className = "user-photo-container">
+                            <Avatar size="md" name = "karad" src = "https://www.larvalabs.com/cryptopunks/cryptopunk9476.png">
+                            </Avatar>
+                        </div>
+                        <div className = "user-details">
+                            <div className = "user-address">
+                                0x7031
+                            </div>
+                            <div className = "user-name">
+                                Karad
+                            </div>                    
+                        </div>
                     </div>
-                    <div className = "user-name">
-                        Karad
-                    </div>                    
-                </div>                
-            </div>
-        </div>
-        
+                </MenuButton>
+                <MenuList>
+                    <MenuGroup title="Data">
+                        <MenuItem>Export data</MenuItem>
+                    </MenuGroup>
+                    <MenuGroup title="Profile">
+                        <MenuItem>Settings</MenuItem>
+                        <MenuItem>Switch Accounts</MenuItem>
+                        <MenuItem>Log out</MenuItem>
+                    </MenuGroup>      
+                </MenuList>
+            </Menu>                               
+        </div>        
     );
 };
 

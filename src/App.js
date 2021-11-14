@@ -4,8 +4,7 @@ import SideBar from './components/SideBar/SideBar';
 import Page from './components/Page/Page';
 import './App.css';
 import useHttp from './hooks/use-http';
-import { Container } from "@chakra-ui/react"
-import { Flex, Spacer } from "@chakra-ui/react"
+import { Spinner, Center } from "@chakra-ui/react"
 // import { io } from "socket.io-client";
 
 // const socket = io("http://localhost:5000");
@@ -54,11 +53,13 @@ const Pages = ({match}) => {
   
   if(isLoading){
     return (      
-      <div className="app-container container">
-        <div className = "row">
-          <h1>Loading...</h1>
-        </div>     
-      </div>      
+      <Center h="full">
+          <Spinner 
+            size="xl"
+            speed="0.65s"
+            thickness="3px"
+          />   
+      </Center>      
     ); 
   }
   else if(pages.length === 0){
